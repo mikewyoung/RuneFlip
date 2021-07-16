@@ -5,3 +5,5 @@ Old School Runescape has a massive player-ran stock market of sorts called the "
 There are various armor sets which you can buy the legs, top, bottom and weapon individually, or as a bundle. This tool will calculate any profits you can potentially make by calculating the margins between the sum of the prices for individual armor pieces and the actual bundled item.
 
 This was commissioned by a user of GE-tracker.com who wishes to remain anonymous.
+
+View live version at https://runeflip.herokuapp.com/
