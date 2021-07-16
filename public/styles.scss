@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Heebo:wght@400;600&family=Poppins:wght@400;600&display=swap');
+$defaultFont: 'Heebo', sans-serif;
+$backgroundColor: #c0d6df;
+$fontColor: #4f6d7a;
+$white: #eaeaea;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+}
+
+body{
+    font-family: $defaultFont;
+    background: $backgroundColor;
+    color: $fontColor;
+}
+
+img{
+    width: 100%;
+}
+
+#navbar-container{
+    background-color: $white;
+}
+
+.navbar{
+    padding: 2em inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+        list-style: none;
+        word-spacing: 2em;
+        li{
+            display: inline-block;
+        }
+    }
+}
+
+.container{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+#logo{
+    font-weight: 600;
+    font-size: 2em;
+    text-decoration: bold;
+}
+
+.item-list{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+#barrows .item-list{
+    grid-template-columns: 1fr 1fr;
+}
+
+.item-card{
+    border-radius: inherit;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+section{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: $white;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.barrows-list{
+    li{
+        text-align: center;
+        padding: 0 1em;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    li:nth-child(2n){
+        background-color: $white;
+    }
+
+    li:nth-child(1){
+        border-bottom-style: solid;
+    }
+}
+
+.crushables-list{
+    li{
+        text-align: center;
+        padding: 0 1em;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    li:nth-child(2n){
+        background-color: $white;
+    }
+
+    li:nth-child(1){
+        border-bottom-style: solid;
+    }
+}
+
+.margins{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+#barrows .margin{
+    display: inline-block;
+    box-sizing: content-box;
+    padding: 0.5em 1em;
+    background-color: $fontColor;
+}
+
+.loss{
+    color: pink;
+}
+
+.profit{
+    color: lime;
+}
+
+#crushables{
+    .loss{
+        color: red;
+    }
+    
+    .profit{
+        color: darkcyan;
+    }
+}
+
+#about{
+    padding: 1em;
+}
+
+@media only screen and (max-width: 750px){
+    body{
+        font-size: 0.85em;
+    }
+
+    section{
+        margin: 0;
+        border-radius: 0px;
+    }
+
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .item-card{
+        border-radius: 0px;
+    }
+
+    .item-list{
+        grid-template-columns: 1fr;
+    }
+
+    #barrows .item-list{
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        div{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}

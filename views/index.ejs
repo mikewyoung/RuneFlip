@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuneFlip - Realtime profit margin calculator for Old School Runescape</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="helper.js"></script>
+</head>
+<body onload="colorMargins()">
+    <div id="navbar-container">
+        <div class="navbar container">
+            <div id="logo">
+                RuneFlip
+            </div>
+    
+            <nav>
+                <ul>
+                    <li><a href="#barrows">Armor</a></li>
+                    <li><a href="#crushables">Crushables</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="barrows">
+            <h2>Barrows sets</h2>
+            <div class="item-list container">
+                <div class="item-card">
+                    <h3>Guthan's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Guthan's helm
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Guthan's platebody
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Guthan's chainskirt
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Guthan's warspear
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Guthan's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.guthan.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price" >
+                                <%- 
+                                priceData.guthan.setHigh - priceData.guthan.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                            <%- 
+                                priceData.guthan.piecesHigh - priceData.guthan.setLow
+                            %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <h3>Dharok's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Dharok's helm
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Dharok's platebody
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Dharok's platelegs
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Dharok's greataxe
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Dharok's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.dharok.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.dharok.setHigh - priceData.dharok.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.dharok.piecesHigh - priceData.dharok.setLow
+                                %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <h3>Torag's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Torag's helm
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Torag's platebody
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Torag's platelegs
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Torag's twin hammers
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Torag's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.torag.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.torag.setHigh - priceData.torag.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.torag.piecesHigh - priceData.torag.setLow
+                                %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <h3>Verac's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Verac's helm
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Verac's brassard
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Verac's plateskirt
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Verac's flail
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Verac's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.verac.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.verac.setHigh - priceData.verac.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.verac.piecesHigh - priceData.verac.setLow
+                                %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <h3>Ahrim's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Ahrim's helm
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Ahrim's robe top
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Ahrim's robe bottom
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Ahrim's staff
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Ahrim's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.ahrim.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.ahrim.setHigh - priceData.ahrim.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.ahrim.piecesHigh - priceData.ahrim.setLow
+                                %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <h3>Karil's equipment</h3>
+                    <ul class="barrows-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Buy Price
+                            </div>
+                            <div>
+                                Sell Price
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Karil's coif
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.highPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.lowPrices[0] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Karil's leathertop
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.highPrices[1] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.lowPrices[1] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Karil's leatherskirt
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.highPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.lowPrices[2] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Karil's crossbow
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.highPrices[3] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.lowPrices[3] %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Karil's armor set
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.setHigh %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.karil.setLow %>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Margins</h3>
+                    <div class="margins">
+                        <div>
+                            <h4>Disassembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.karil.setHigh - priceData.karil.piecesLow
+                                %>
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Assembling set</h4>
+                            <span class="margin price">
+                                <%- 
+                                priceData.karil.piecesHigh - priceData.karil.setLow
+                                %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <div class="container">
+        <section id="crushables">
+            <h2>Crushable items</h2>
+            <div class="item-list container">
+                <div class="item-card">
+                    <ul class="crushables-list">
+                        <li>
+                            <div>
+                                Name
+                            </div>
+                            <div>
+                                Low price
+                            </div>
+                            <div>
+                                Crushed high price
+                            </div>
+                            <div>
+                                Profit margin
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Bird's nest
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.lowPrices[0] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.highPrices[1] %>
+                            </div>
+                            <div class="price margin">
+                                <%- priceData.crushables.highPrices[1] - priceData.crushables.lowPrices[0] - 50 %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Superior dragon bones
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.lowPrices[2] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.highPrices[3] %>
+                            </div>
+                            <div class="price margin">
+                                <%- priceData.crushables.highPrices[3] - priceData.crushables.lowPrices[2] - 50 %>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>
+                                Unicorn horn
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.lowPrices[4] %>
+                            </div>
+                            <div class="price">
+                                <%- priceData.crushables.highPrices[5] %>
+                            </div>
+                            <div class="price margin">
+                                <%- priceData.crushables.highPrices[5] - priceData.crushables.lowPrices[4] - 50 %>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <p>This tool retrieves data from the <a href="https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices">Old School Runescape Prices API</a> and uses it to calculate profit margins for certain production actions for them.<br>Tool by <a href="michaelyoung.net">Michael Young</a> ©2021</a></p>
+        </section>
+    </div>
+
+</body>
+
+</html>

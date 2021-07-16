@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Heebo:wght@400;600&family=Poppins:wght@400;600&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  background: #c0d6df;
+  color: #4f6d7a;
+}
+
+img {
+  width: 100%;
+}
+
+#navbar-container {
+  background-color: #eaeaea;
+}
+
+.navbar {
+  padding: 2em inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar ul {
+  list-style: none;
+  word-spacing: 2em;
+}
+.navbar ul li {
+  display: inline-block;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+
+#logo {
+  font-weight: 600;
+  font-size: 2em;
+  -webkit-text-decoration: bold;
+          text-decoration: bold;
+}
+
+.item-list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+#barrows .item-list {
+  grid-template-columns: 1fr 1fr;
+}
+
+.item-card {
+  border-radius: inherit;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+section {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #eaeaea;
+  margin: 1em;
+  border-radius: 5px;
+}
+
+.barrows-list li {
+  text-align: center;
+  padding: 0 1em;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.barrows-list li:nth-child(2n) {
+  background-color: #eaeaea;
+}
+.barrows-list li:nth-child(1) {
+  border-bottom-style: solid;
+}
+
+.crushables-list li {
+  text-align: center;
+  padding: 0 1em;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.crushables-list li:nth-child(2n) {
+  background-color: #eaeaea;
+}
+.crushables-list li:nth-child(1) {
+  border-bottom-style: solid;
+}
+
+.margins {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+#barrows .margin {
+  display: inline-block;
+  box-sizing: content-box;
+  padding: 0.5em 1em;
+  background-color: #4f6d7a;
+}
+
+.loss {
+  color: pink;
+}
+
+.profit {
+  color: lime;
+}
+
+#crushables .loss {
+  color: red;
+}
+#crushables .profit {
+  color: darkcyan;
+}
+
+#about {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    font-size: 0.85em;
+  }
+
+  section {
+    margin: 0;
+    border-radius: 0px;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .item-card {
+    border-radius: 0px;
+  }
+
+  .item-list {
+    grid-template-columns: 1fr;
+  }
+
+  #barrows .item-list {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .navbar div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navbar nav {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
