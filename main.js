@@ -24,7 +24,7 @@ app.get('/helper.js', function(req, res) {
     res.sendFile(__dirname + "/public/" + "helper.js");
 });
 
-app.listen(80);
+app.listen(process.env.PORT || 80);
 
 
 let sendData = {}
